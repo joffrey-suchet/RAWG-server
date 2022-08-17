@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const axios = require("axios");
 
-router.get("./home", async (req, res) => {
+router.get("/home", async (req, res) => {
   console.log("route home");
   try {
     axios
