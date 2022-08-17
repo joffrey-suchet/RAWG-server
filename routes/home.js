@@ -1,4 +1,5 @@
-const router = express.router();
+const express = require("express");
+const router = express.Router();
 const axios = require("axios");
 
 router.get("./home", async (req, res) => {
@@ -7,8 +8,8 @@ router.get("./home", async (req, res) => {
     axios
       .get(`49f034579c6a41ebb56a4b58d1cc73ef?key=${process.env.API_KEY}`)
       .then((response) => {
-        const games = response.data;
-        res.status(200).json(games);
+        const home = response.data;
+        res.status(200).json(home);
       })
       .catch((error) => {
         console.log(error);
@@ -18,4 +19,4 @@ router.get("./home", async (req, res) => {
   }
 });
 
-module.export = router;
+module.exports = router;

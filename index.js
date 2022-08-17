@@ -5,9 +5,14 @@ const app = express();
 
 require("dotenv").config();
 app.use(cors());
+app.use(express.json());
 
 const home = require("./routes/home");
 app.use(home);
+
+app.all("*", function (req, res) {
+  res.json({ message: "Page not found" });
+});
 
 app.listen(process.env.PORT, () => {
   console.log("server has started");
