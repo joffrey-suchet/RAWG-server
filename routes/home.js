@@ -6,7 +6,7 @@ router.get("./home", async (req, res) => {
   console.log("route home");
   try {
     axios
-      .get(`49f034579c6a41ebb56a4b58d1cc73ef?key=${process.env.API_KEY}`)
+      .get(`https://api.rawg.io/api/game?skey=${process.env.API_KEY}`)
       .then((response) => {
         const home = response.data;
         res.status(200).json(home);
