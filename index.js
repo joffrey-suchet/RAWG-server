@@ -14,6 +14,10 @@ app.all("*", function (req, res) {
   res.json({ message: "Page not found" });
 });
 
-app.listen(process.env.PORT, () => {
+// app.listen(process.env.PORT, () => {
+//   console.log("server has started");
+// });
+
+app.listen(3006, () => {
   console.log("server has started");
 });
