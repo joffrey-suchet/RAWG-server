@@ -10,6 +10,9 @@ app.use(express.json());
 const home = require("./routes/home");
 app.use(home);
 
+const game = require("./routes/game");
+app.use(game);
+
 app.all("*", function (req, res) {
   res.json({ message: "Page not found" });
 });
